@@ -22,36 +22,40 @@
         <div class="brand-tag">SOFTWARE · PRODUCTS · AI</div>
       </div>
       <nav class="links">
-        <a href="#about" class="active">ABOUT ME</a>
-        <a href="#skills">SKILLS</a>
-        <a href="#projects">BEST WORK</a>
-        <a href="#contact">CONTACT</a>
+        <a href="#about" class="active" data-i18n="nav.about">ABOUT ME</a>
+        <a href="#skills" data-i18n="nav.skills">SKILLS</a>
+        <a href="#projects" data-i18n="nav.work">BEST WORK</a>
+        <a href="#contact" data-i18n="nav.contact">CONTACT</a>
       </nav>
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="vi">VI</button>
+      </div>
     </div>
   </header>
 
   <div class="hero-content">
     <h1 class="hero-title">
-      <span class="c-blue">Creative.</span> <span class="c-pink">Efficient.</span> <span class="c-white">Reliable.</span>
+      <span class="c-blue" data-i18n="hero.title1">Creative.</span> <span class="c-pink" data-i18n="hero.title2">Efficient.</span> <span class="c-white" data-i18n="hero.title3">Reliable.</span>
     </h1>
     <p class="hero-subtitle">
-      Software Development <span class="sep">·</span> Product Building <span class="sep">·</span> Problem Solving
+      <span data-i18n="hero.sub1">Software Development</span> <span class="sep">·</span> <span data-i18n="hero.sub2">Product Building</span> <span class="sep">·</span> <span data-i18n="hero.sub3">Problem Solving</span>
     </p>
     <div class="hero-btns">
-      <a class="btn-pill dark" href="#contact">Get In Touch →</a>
-      <a class="btn-pill outline" href="#projects">View Best Work</a>
+      <a class="btn-pill dark" href="#contact" data-i18n="hero.cta1">Get In Touch →</a>
+      <a class="btn-pill outline" href="#projects" data-i18n="hero.cta2">View Best Work</a>
     </div>
   </div>
 
-  <a href="#about" class="scroll-down" aria-label="Scroll down">↓</a>
+  <a href="#about" class="scroll-down" data-i18n-aria="hero.scrollAria" aria-label="Scroll down">↓</a>
 </section>
 
 <div class="wrap">
 
   <section id="about">
-    <h2 class="about-heading reveal">About <span class="c-blue">Me</span></h2>
+    <h2 class="about-heading reveal" data-i18n-html="about.heading">About <span class="c-blue">Me</span></h2>
     <div class="heading-underline reveal reveal-d1"></div>
-    <p class="section-sub center reveal reveal-d2">A snapshot of who I am and what I'm building.</p>
+    <p class="section-sub center reveal reveal-d2" data-i18n="about.subtitle">A snapshot of who I am and what I'm building.</p>
 
     <div class="about-columns">
       <div class="photo-card reveal-left reveal-d3">
@@ -63,20 +67,20 @@
           <div class="corner tr"></div>
           <div class="corner bl"></div>
           <div class="corner br"></div>
-          <div class="badge-online">⚡ Systems Online</div>
+          <div class="badge-online" data-i18n="about.systemsOnline">⚡ Systems Online</div>
           <div class="btn-terminal">&gt;_</div>
           <div class="photo-overlay">
-            <span class="pill-hire">● Available for Hire</span>
+            <span class="pill-hire" data-i18n="about.availableForHire">● Available for Hire</span>
             <div class="photo-name">Ngo Quang Bao</div>
-            <div class="photo-loc">📍 Hanoi, Vietnam</div>
+            <div class="photo-loc" data-i18n="about.location">📍 Hanoi, Vietnam</div>
           </div>
         </div>
       </div>
 
       <div class="bio-card reveal-right reveal-d4">
-        <a class="load-profile" href="#projects">Load Full Profile ›</a>
-        <h3 class="bio-title">Building for the <span class="c-blue">Digital Future</span></h3>
-        <p>
+        <a class="load-profile" href="#projects" data-i18n="about.loadProfile">Load Full Profile ›</a>
+        <h3 class="bio-title" data-i18n-html="about.bioTitle">Building for the <span class="c-blue">Digital Future</span></h3>
+        <p data-i18n-html="about.bio1">
           I'm an <b>Information Technology student</b> at <b>Hanoi University of Science and Technology</b>,
           focused on <b>software development</b> and <b>product building</b>.
           I've built hands-on experience with <span class="hl-red">C# and Unity</span>,
@@ -84,7 +88,7 @@
           <span class="hl-blue">PHP and MySQL</span> for web development.
         </p>
 
-        <p>
+        <p data-i18n-html="about.bio2">
           I'm always eager to learn new technologies and step outside my comfort zone.
           Currently, I'm particularly interested in going beyond
           <span class="hl-red">prompt engineering</span> and developing deeper expertise in
@@ -95,43 +99,43 @@
         <div class="stats-row">
           <div>
             <div class="stat-num">2001</div>
-            <div class="stat-label">Born</div>
+            <div class="stat-label" data-i18n="about.statBorn">Born</div>
           </div>
           <div>
             <div class="stat-num">5+</div>
-            <div class="stat-label">Projects</div>
+            <div class="stat-label" data-i18n="about.statProjects">Projects</div>
           </div>
           <div>
             <div class="stat-num">HUST</div>
-            <div class="stat-label">University</div>
+            <div class="stat-label" data-i18n="about.statUniversity">University</div>
           </div>
           <div>
             <div class="stat-num">100%</div>
-            <div class="stat-label">Dedication</div>
+            <div class="stat-label" data-i18n="about.statDedication">Dedication</div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="lang-row">
-      <span class="lang-pill">🇻🇳 Vietnamese (Native)</span>
-      <span class="lang-pill">🇬🇧 English (Working Proficiency)</span>
+      <span class="lang-pill" data-i18n="about.langVi">🇻🇳 Vietnamese (Native)</span>
+      <span class="lang-pill" data-i18n="about.langEn">🇬🇧 English (Working Proficiency)</span>
     </div>
   </section>
 
   <section id="skills">
-    <h2 class="about-heading reveal">My <span class="c-blue">Skills</span></h2>
+    <h2 class="about-heading reveal" data-i18n-html="skills.heading">My <span class="c-blue">Skills</span></h2>
     <div class="heading-underline reveal reveal-d1"></div>
-    <p class="section-sub center reveal reveal-d2">What I work with, and how it all fits together.</p>
+    <p class="section-sub center reveal reveal-d2" data-i18n="skills.subtitle">What I work with, and how it all fits together.</p>
 
     <div class="skills-cards-grid">
       <div class="skill-feature-card accent-blue reveal reveal-d1">
         <div class="skill-card-top">
           <span class="skill-card-icon">&lt;/&gt;</span>
-          <span class="skill-badge">LANGUAGES</span>
+          <span class="skill-badge" data-i18n="skills.badgeLanguages">LANGUAGES</span>
         </div>
-        <h3>Programming Languages</h3>
-        <p>The core languages I write and solve problems in day to day.</p>
+        <h3 data-i18n="skills.langTitle">Programming Languages</h3>
+        <p data-i18n="skills.langDesc">The core languages I write and solve problems in day to day.</p>
         <ul class="skill-bullets">
           <li>C# &amp; C++</li>
           <li>SQL</li>
@@ -142,10 +146,10 @@
       <div class="skill-feature-card accent-blue featured reveal reveal-d2">
         <div class="skill-card-top">
           <span class="skill-card-icon">⚙</span>
-          <span class="skill-badge">TECH</span>
+          <span class="skill-badge" data-i18n="skills.badgeTech">TECH</span>
         </div>
-        <h3>Technologies &amp; Frameworks</h3>
-        <p>Frameworks and platforms I use to actually build and ship things.</p>
+        <h3 data-i18n="skills.techTitle">Technologies &amp; Frameworks</h3>
+        <p data-i18n="skills.techDesc">Frameworks and platforms I use to actually build and ship things.</p>
         <ul class="skill-bullets">
           <li>Unity</li>
           <li>MySQL</li>
@@ -156,10 +160,10 @@
       <div class="skill-feature-card accent-red reveal reveal-d3">
         <div class="skill-card-top">
           <span class="skill-card-icon">▦</span>
-          <span class="skill-badge">TOOLS</span>
+          <span class="skill-badge" data-i18n="skills.badgeTools">TOOLS</span>
         </div>
-        <h3>Tools &amp; Workflow</h3>
-        <p>Everyday tooling for planning work and shipping code faster.</p>
+        <h3 data-i18n="skills.toolsTitle">Tools &amp; Workflow</h3>
+        <p data-i18n="skills.toolsDesc">Everyday tooling for planning work and shipping code faster.</p>
         <ul class="skill-bullets">
           <li>Trello</li>
           <li>Claude Code &amp; GitHub Copilot</li>
@@ -170,10 +174,10 @@
       <div class="skill-feature-card accent-red reveal reveal-d4">
         <div class="skill-card-top">
           <span class="skill-card-icon">🎨</span>
-          <span class="skill-badge">DESIGN</span>
+          <span class="skill-badge" data-i18n="skills.badgeDesign">DESIGN</span>
         </div>
-        <h3>Design</h3>
-        <p>Designing interfaces that are clean, usable, and mobile-friendly.</p>
+        <h3 data-i18n="skills.designTitle">Design</h3>
+        <p data-i18n="skills.designDesc">Designing interfaces that are clean, usable, and mobile-friendly.</p>
         <ul class="skill-bullets">
           <li>Figma</li>
           <li>Mobile-First</li>
@@ -193,7 +197,7 @@
             <span class="orbit-pill">SQL</span>
             <span class="orbit-pill">PHP</span>
           </div>
-          <div class="cluster-label blue">Languages</div>
+          <div class="cluster-label blue" data-i18n="skills.clusterLanguages">Languages</div>
         </div>
 
         <div class="pill-cluster">
@@ -205,7 +209,7 @@
             <span class="orbit-pill">Git</span>
             <span class="orbit-pill">VS Code</span>
           </div>
-          <div class="cluster-label blue">Tools &amp; Workflow</div>
+          <div class="cluster-label blue" data-i18n="skills.clusterToolsWorkflow">Tools &amp; Workflow</div>
         </div>
       </div>
 
@@ -213,8 +217,8 @@
         <div class="orbit-ring"><span class="orbit-dot"></span></div>
         <div class="orbit-core">
           <div class="orbit-icon">🧠</div>
-          <div class="orbit-title">SKILLS</div>
-          <div class="orbit-sub">TECH STACK</div>
+          <div class="orbit-title" data-i18n="skills.orbitTitle">SKILLS</div>
+          <div class="orbit-sub" data-i18n="skills.orbitSub">TECH STACK</div>
         </div>
       </div>
 
@@ -227,7 +231,7 @@
           <div class="pill-row">
             <span class="orbit-pill">Laravel</span>
           </div>
-          <div class="cluster-label red">Technologies</div>
+          <div class="cluster-label red" data-i18n="skills.clusterTechnologies">Technologies</div>
         </div>
 
         <div class="pill-cluster">
@@ -238,13 +242,13 @@
           <div class="pill-row">
             <span class="orbit-pill">UI/UX</span>
           </div>
-          <div class="cluster-label red">Design</div>
+          <div class="cluster-label red" data-i18n="skills.clusterDesign">Design</div>
         </div>
       </div>
     </div>
 
     <div class="tools-inventory">
-      <div class="tools-badge">🔧 TOOLS INVENTORY</div>
+      <div class="tools-badge" data-i18n="skills.toolsInventory">🔧 TOOLS INVENTORY</div>
       <div class="marquee">
         <div class="marquee-track">
           <div class="tool-chip" title="Claude Code"><span class="tool-icon">CC</span><span class="tool-label">Claude Code</span></div>
@@ -282,48 +286,50 @@
   <section id="projects">
     <div class="works-header">
       <div>
-        <h2 class="works-title reveal">Best Works</h2>
-        <p class="works-sub reveal reveal-d1">Curated Portfolio Selection</p>
+        <h2 class="works-title reveal" data-i18n="works.heading">Best Works</h2>
+        <p class="works-sub reveal reveal-d1" data-i18n="works.subtitle">Curated Portfolio Selection</p>
       </div>
       <div class="works-nav">
-        <button type="button" class="works-prev" aria-label="Previous project">‹</button>
-        <button type="button" class="works-next" aria-label="Next project">›</button>
+        <button type="button" class="works-prev" data-i18n-aria="works.prevAria" aria-label="Previous project">‹</button>
+        <button type="button" class="works-next" data-i18n-aria="works.nextAria" aria-label="Next project">›</button>
       </div>
     </div>
 
+    <!-- Titles, descriptions and the case-study button label are filled in by
+         main.js from window.CASE_DATA (assets/js/projects-data.js) in the
+         current language — only the image + data-project index live here. -->
     <div class="works-carousel reveal reveal-d2">
       <div class="works-track">
 
         <div class="work-slide">
           <div class="work-card" data-project="0">
-            <img class = "work-image" src="assets/images/Rpg.png  " alt="Profile Image">
+            <img class="work-image" src="assets/images/Rpg.png" alt="Project screenshot">
             <div class="work-overlay">
-              <div class="work-title">Action RPG<span class="accent">Dungeon Crawler</span></div>
-              <p class="work-desc">An offline Action RPG / Dungeon Crawler featuring combo-based combat, a branching skill tree, a full crafting/equipment system, and boss encounters driven by finite-state AI.</p>
-              <a class="work-case-btn" href="#" data-project="0">View Case Study</a>
+              <div class="work-title"></div>
+              <p class="work-desc"></p>
+              <a class="work-case-btn" href="#" data-i18n="works.viewCaseStudy">View Case Study</a>
             </div>
           </div>
         </div>
 
         <div class="work-slide">
           <div class="work-card" data-project="1">
-            <img class = "work-image" src="assets/images/SandBlast.png  " alt="Profile Image">
+            <img class="work-image" src="assets/images/SandBlast.png" alt="Project screenshot">
             <div class="work-overlay">
-              <div class="work-title">Sand Blast<span class="accent">Puzzle Game</span></div>
-              <p class="work-desc">A Tetris-inspired match/stack puzzle game with power-up mechanics and a full player progression save system.</p>
-              <a class="work-case-btn" href="#" data-project="1">View Case Study</a>
+              <div class="work-title"></div>
+              <p class="work-desc"></p>
+              <a class="work-case-btn" href="#" data-i18n="works.viewCaseStudy">View Case Study</a>
             </div>
           </div>
         </div>
 
-
-    <div class="work-slide">
+        <div class="work-slide">
           <div class="work-card" data-project="2">
-            <img class = "work-image" src="assets/images/Dugeon.png  " alt="Profile Image">
+            <img class="work-image" src="assets/images/Dugeon.png" alt="Project screenshot">
             <div class="work-overlay">
-              <div class="work-title">TopDownShooter (3D) – Dune Survival<span class="accent">Action Game</span></div>
-              <p class="work-desc">A desert-set survival shooter featuring adaptive enemy AI, a balanced weapon and reload system, and diverse mission modes spanning timed runs, scavenger hunts, VIP escorts, and tower defense.</p>
-              <a class="work-case-btn" href="#" data-project="1">View Case Study</a>
+              <div class="work-title"></div>
+              <p class="work-desc"></p>
+              <a class="work-case-btn" href="#" data-i18n="works.viewCaseStudy">View Case Study</a>
             </div>
           </div>
         </div>
@@ -335,8 +341,8 @@
 
   <section id="contact">
     <div class="contact-card reveal">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-sub" style="margin-bottom:0;">
+      <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+      <p class="section-sub" style="margin-bottom:0;" data-i18n="contact.subtitle">
         Want to talk about a job or a project? Feel free to reach out through the channels below.
       </p>
       <div class="contact-links">
@@ -353,27 +359,27 @@
 <div class="case-modal" id="caseModal" aria-hidden="true">
   <div class="case-modal-backdrop" data-close="1"></div>
   <div class="case-modal-panel" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
-    <button type="button" class="case-modal-close" data-close="1" aria-label="Close">&times;</button>
+    <button type="button" class="case-modal-close" data-close="1" data-i18n-aria="modal.close" aria-label="Close">&times;</button>
     <div class="case-modal-scroll">
 
       <div class="case-tags" id="caseTags"></div>
       <h2 class="case-title" id="caseModalTitle"></h2>
 
-      <h3 class="case-section-label">Screenshots</h3>
+      <h3 class="case-section-label" data-i18n="modal.screenshots">Screenshots</h3>
       <div class="case-screenshot-wrap">
         <img class="case-screenshot" id="caseScreenshot" src="" alt="Project screenshot">
       </div>
 
-      <h3 class="case-section-label">Demo Video</h3>
+      <h3 class="case-section-label" data-i18n="modal.demoVideo">Demo Video</h3>
       <div class="case-video-wrap" id="caseVideoWrap"></div>
 
-      <h3 class="case-section-label">Project Overview</h3>
+      <h3 class="case-section-label" data-i18n="modal.overview">Project Overview</h3>
       <p class="case-overview" id="caseOverview"></p>
 
-      <h3 class="case-section-label">Development Highlights</h3>
+      <h3 class="case-section-label" data-i18n="modal.highlights">Development Highlights</h3>
       <ul class="case-list" id="caseHighlights"></ul>
 
-      <h3 class="case-section-label">Key Features</h3>
+      <h3 class="case-section-label" data-i18n="modal.features">Key Features</h3>
       <ul class="case-list" id="caseFeatures"></ul>
 
       <div class="case-footer" id="caseFooter"></div>
@@ -383,9 +389,11 @@
 </div>
 
 <footer>
-  © 2026 Ngo Quang Bao. Built with ♥ using pure HTML/CSS.
+  <span data-i18n="footer.text">© 2026 Ngo Quang Bao. Built with ♥ using pure HTML/CSS.</span>
 </footer>
 
+<script src="assets/js/i18n-data.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/projects-data.js"></script>
 <script src="assets/js/main.js"></script>
 

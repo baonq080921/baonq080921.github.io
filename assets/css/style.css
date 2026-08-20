@@ -70,6 +70,20 @@ nav.links a{
 nav.links a.active,
 nav.links a:hover{color:var(--text);border-bottom-color:var(--accent-2);}
 
+.lang-switch{
+  display:flex;gap:2px;margin-left:24px;padding:3px;
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  border-radius:999px;flex-shrink:0;
+}
+.lang-btn{
+  padding:5px 12px;border-radius:999px;
+  font-size:10.5px;font-weight:700;letter-spacing:0.5px;
+  color:var(--text-muted);background:transparent;border:none;
+  cursor:pointer;transition:color .15s ease, background .15s ease;
+}
+.lang-btn:hover{color:var(--text);}
+.lang-btn.active{color:#0b0d10;background:var(--accent-2);}
+
 .hero-content{
   position:relative;z-index:2;
   flex:1;display:flex;flex-direction:column;
@@ -654,7 +668,7 @@ p.section-sub.center{text-align:center;max-width:520px;margin:0 auto 44px;}
   font-size:clamp(18px,2.6vw,24px);font-weight:800;line-height:1.25;
   display:flex;flex-direction:column;
 }
-.work-title .accent{color:#f87171;}
+.work-title .accent{color:#f87171;} /* fallback; overridden inline per-project from data.accentColor (see main.js) */
 
 .work-overlay p.work-desc{
   font-size:12.5px;color:var(--text-muted);line-height:1.65;
@@ -741,8 +755,8 @@ p.section-sub.center{text-align:center;max-width:520px;margin:0 auto 44px;}
   padding-right:50px;
 }
 .case-title .accent{
-  background:linear-gradient(90deg,#f87171,#fb923c);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
+  /* fallback color; actual color is set inline per-project from data.accentColor (see main.js) */
+  color:#f87171;
 }
 .case-section-label{font-size:15px;font-weight:800;margin-bottom:14px;margin-top:34px;}
 .case-section-label:first-of-type{margin-top:0;}

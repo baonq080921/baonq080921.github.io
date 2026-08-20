@@ -132,6 +132,9 @@
 })();
 
 // Best Works carousel: dot navigation, prev/next buttons, and press-to-drag.
+// Card titles/descriptions are filled in from window.CASE_DATA so the project
+// text only has to be maintained in one place (projects-data.js), in whichever
+// language is currently active.
 (function(){
   var track = document.querySelector('.works-track');
   var dotsWrap = document.querySelector('.works-dots');
@@ -139,8 +142,31 @@
   var nextBtn = document.querySelector('.works-next');
   if(!track || !dotsWrap) return;
 
+  var CASE_DATA = window.CASE_DATA || [];
   var slides = Array.prototype.slice.call(track.querySelectorAll('.work-slide'));
   var current = 0;
+
+  function renderCards(){
+    var lang = window.i18n ? window.i18n.getLang() : 'en';
+    track.querySelectorAll('.work-card').forEach(function(card){
+      var index = parseInt(card.getAttribute('data-project'), 10);
+      var data = CASE_DATA[index];
+      if(!data) return;
+      var content = data[lang] || data.en;
+
+      var titleEl = card.querySelector('.work-title');
+      if(titleEl){
+        var color = data.accentColor || '#f87171';
+        titleEl.innerHTML = content.title1 + '<span class="accent" style="color:' + color + '">' + content.title2 + '</span>';
+      }
+      var descEl = card.querySelector('.work-desc');
+      if(descEl){
+        descEl.textContent = content.overview;
+      }
+    });
+  }
+  renderCards();
+  document.addEventListener('i18n:change', renderCards);
 
   slides.forEach(function(slide, i){
     var dot = document.createElement('button');
@@ -242,6 +268,13 @@
   var featuresEl = document.getElementById('caseFeatures');
   var footerEl = document.getElementById('caseFooter');
 
+  var openIndex = null;        // data-project index of the currently open case, or null
+  var openScreenshot = '';     // screenshot src of the currently open case
+
+  function t(key){
+    return window.i18n ? window.i18n.t(key) : key;
+  }
+
   function getYouTubeId(url){
     if(!url) return null;
     var m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
@@ -256,7 +289,7 @@
       embed.className = 'case-video-embed';
       var iframe = document.createElement('iframe');
       iframe.src = 'https://www.youtube.com/embed/' + ytId;
-      iframe.title = 'Demo video';
+      iframe.title = t('modal.demoVideo');
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       iframe.allowFullscreen = true;
       embed.appendChild(iframe);
@@ -265,7 +298,7 @@
       videoWrapEl.innerHTML =
         '<div class="case-video-placeholder">' +
           '<div class="case-video-play">▶</div>' +
-          '<span>Demo video coming soon</span>' +
+          '<span>' + t('modal.comingSoon') + '</span>' +
         '</div>';
     }
   }
@@ -286,22 +319,28 @@
   function openCase(index, screenshotSrc){
     var data = CASE_DATA[index];
     if(!data) return;
+    var lang = window.i18n ? window.i18n.getLang() : 'en';
+    var content = data[lang] || data.en;
 
-    titleEl.innerHTML = data.title1 + '<span class="accent">' + data.title2 + '</span>';
+    openIndex = index;
+    openScreenshot = screenshotSrc || openScreenshot;
+
+    titleEl.innerHTML = content.title1 + '<span class="accent" style="color:' + (data.accentColor || '#f87171') + '">' + content.title2 + '</span>';
 
     tagsEl.innerHTML = '';
-    data.tags.forEach(function(t){
+    data.tags.forEach(function(tag){
       var span = document.createElement('span');
-      span.textContent = t;
+      span.textContent = tag;
       tagsEl.appendChild(span);
     });
     tagsEl.style.display = data.tags.length ? 'flex' : 'none';
 
-    screenshotEl.src = screenshotSrc || '';
+    screenshotEl.src = openScreenshot;
+    screenshotEl.alt = t('modal.screenshotAlt');
     fillVideo(data.video);
-    overviewEl.textContent = data.overview;
-    fillList(highlightsEl, data.highlights, true);
-    fillList(featuresEl, data.features, false);
+    overviewEl.textContent = content.overview;
+    fillList(highlightsEl, content.highlights, true);
+    fillList(featuresEl, content.features, false);
 
     footerEl.innerHTML = '';
     if(data.liveUrl){
@@ -310,7 +349,7 @@
       live.href = data.liveUrl;
       live.target = '_blank';
       live.rel = 'noopener';
-      live.innerHTML = '↗ Live Demo';
+      live.innerHTML = t('modal.liveDemo');
       footerEl.appendChild(live);
     }
     if(data.codeUrl){
@@ -319,7 +358,7 @@
       code.href = data.codeUrl;
       code.target = '_blank';
       code.rel = 'noopener';
-      code.textContent = 'View Code';
+      code.textContent = t('modal.viewCode');
       footerEl.appendChild(code);
     }
 
@@ -330,6 +369,7 @@
   }
 
   function closeCase(){
+    openIndex = null;
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
@@ -342,6 +382,11 @@
     var img = card.querySelector('.work-image');
     openCase(index, img ? img.src : '');
   }
+
+  // if the modal is open when the language switches, re-render its content in place
+  document.addEventListener('i18n:change', function(){
+    if(openIndex !== null) openCase(openIndex, openScreenshot);
+  });
 
   // clicking the button opens the case study...
   document.querySelectorAll('.work-case-btn').forEach(function(btn){
