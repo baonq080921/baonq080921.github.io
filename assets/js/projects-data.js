@@ -83,7 +83,7 @@ window.CASE_DATA = [
       ]
     }
   },
-  { // 2 — TopDownShooter
+  { // 3— Flappy Bird AI (NEAT)
     tags: [],
     accentColor: '#c084fc', // purple
     video: 'https://www.youtube.com/watch?v=7oJZ7vxJcp4&t=260s',
@@ -123,5 +123,45 @@ window.CASE_DATA = [
         'Chế độ chơi đơn offline'
       ]
     }
+  },
+
+  {
+  tags: ['Python', 'Pygame', 'AI', 'NEAT', 'Machine Learning'],
+  accentColor: '#fbbf24', // amber
+  video: 'https://www.youtube.com/watch?v=2TfySQZ65hc&t=6s',
+  liveUrl: null,
+  codeUrl: 'https://github.com/baonq080921/Project_1',
+  en: {
+    title1: 'Flappy Bird', title2: 'AI (NEAT)',
+    overview: 'A Flappy Bird clone built with Python and Pygame, enhanced with a NEAT-based AI that learns to play the game autonomously through neuroevolution.',
+    highlights: [
+      ['Engine', 'Built with Python and Pygame.'],
+      ['AI Algorithm', 'NEAT (NeuroEvolution of Augmenting Topologies), combining genetic algorithms with evolving neural networks.'],
+      ['Training', 'A population of 100 AI-controlled birds evolves across generations using a survival-based fitness function.'],
+      ['Decision Making', 'Each bird\'s neural network reads real-time inputs (height, pipe distance) to decide when to jump.']
+    ],
+    features: [
+      'Physics-based bird movement and procedurally generated pipes',
+      'Collision detection with increasing difficulty',
+      'NEAT-based neuroevolution AI training',
+      'Real-time fitness scoring across generations'
+    ]
+  },
+  vi: {
+    title1: 'Flappy Bird', title2: 'AI (NEAT)',
+    overview: 'Một bản clone game Flappy Bird xây dựng bằng Python và Pygame, tích hợp AI dựa trên thuật toán NEAT giúp tự học chơi game thông qua tiến hóa mạng neural.',
+    highlights: [
+      ['Engine', 'Xây dựng bằng Python và Pygame.'],
+      ['Thuật Toán AI', 'NEAT (NeuroEvolution of Augmenting Topologies), kết hợp giải thuật di truyền với mạng neural tiến hóa.'],
+      ['Huấn Luyện', 'Một quần thể 100 chú chim AI tiến hóa qua các thế hệ bằng hàm fitness dựa trên thời gian sống sót.'],
+      ['Ra Quyết Định', 'Mạng neural của mỗi chú chim nhận input thời gian thực (độ cao, khoảng cách ống) để quyết định nhảy.']
+    ],
+    features: [
+      'Vật lý chuyển động chim và ống sinh ngẫu nhiên',
+      'Phát hiện va chạm và tăng độ khó',
+      'Huấn luyện AI bằng tiến hóa NEAT',
+      'Tính điểm fitness thời gian thực qua các thế hệ'
+    ]
   }
+}
 ];
